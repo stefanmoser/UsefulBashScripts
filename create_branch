@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+puts "Enter the branch name:"
+branch_name = readline.chomp.strip.gsub(" ","-").downcase
+
+puts "git checkout -b #{branch_name}"
+`git checkout -b #{branch_name}`
+
+puts "git push -u origin #{branch_name}"
+`git push -u origin #{branch_name}`

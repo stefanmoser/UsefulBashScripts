@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+status = `git status`
+branch_name = /On branch ([\w\-]+)/.match(status)[1]
+
+if branch_name == "develop"
+  puts "You are currently on the develop branch. Please switch to the branch you want to delete and run the script again."
+  exit
+end
+
+puts "git checkout develop"
+`git checkout develop`
+
+puts "git branch -d #{branch_name}"
+`git branch -d #{branch_name}`
+
+puts "git push origin :#{branch_name}"
+`git push origin :#{branch_name}`

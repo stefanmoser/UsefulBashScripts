@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+puts "Enter the tag name:"
+tag_name = readline.chomp.strip.gsub(" ","-").downcase
+
+puts "git tag #{tag_name}"
+`git tag #{tag_name}`
+
+puts "git push origin #{tag_name}"
+`git push origin #{tag_name}`
